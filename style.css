@@ -21,10 +21,21 @@
     top:20px;
     left: 20px;
 }
+.mainBox .textWrapper div{
+    width:100%;
+    height:100%;
+    font-family: 'Abel', sans-serif;
+}
+.mainBox  .textWrapper .hidden{
+    display:none;
+}
+.mainBox  .textWrapper .activeDiv {
+    display:block;
+}
 .mainBox .textWrapper *{
     padding-top: 5px;
     padding-left:7px;
-    padding-right: 3px;
+    padding-right: 10px;
     font-size:14px;
 }
 .mainBox .textWrapper h2 {
@@ -71,9 +82,13 @@
     display:inline-block;
     min-height:6px;
     min-width:6px;
-    border: 1px solid rgba(100, 99, 99, 0.5);
+    background-color: rgb(212, 209, 209);
+    border: 1px solid rgb(212, 209, 209);
     border-radius: 50%;
     margin: 15px 2px 2px 2px;
+}
+.mainBox .footerNotification .points .active{
+    background-color: rgb(121, 135, 219);
 }
 .mainBox .footerNotification .points .pointSmall:hover{
     cursor: pointer;

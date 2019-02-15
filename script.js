@@ -1,5 +1,7 @@
 window.onload=function(){
   //  var notify=setTimeout(function(){
+      
+      if(!('checkNotifications' in localStorage)){
         var text=[
             {
                 h: 'Email Tip of the day Tip 1',
@@ -52,11 +54,20 @@ window.onload=function(){
         var checkBoxLabel=document.createElement('label');
         var checkBox=document.createElement('input');
         checkBox.setAttribute('type','checkbox');
+        checkBox.setAttribute('title','Подсказка больше не будет всплывать после закрытия');
         checkBoxLabel.appendChild(checkBox);
         var textLabel=document.createElement('span');
         textLabel.innerHTML='Disable Tips';
         checkBoxLabel.appendChild(textLabel);
         footerN.appendChild(checkBoxLabel);
+        //set to local storage
+        checkBox.addEventListener('change',function(e){
+            if(this.checked){
+            localStorage.setItem('checkNotifications',false);
+            }else{
+            localStorage.removeItem('checkNotifications');
+            }
+        });
         //create arrows
         var arrowsContainer=document.createElement('div');
         arrowsContainer.className='arrows';
@@ -106,7 +117,7 @@ window.onload=function(){
 
 
         document.body.appendChild(mainBox);
-
+    }
 
 
    // },5000);

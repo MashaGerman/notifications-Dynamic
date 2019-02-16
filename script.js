@@ -48,7 +48,11 @@ window.onload=function(){
             buttonCross.innerHTML='<i class="fa fa-times" aria-hidden="true"></i>';
             mainBox.appendChild(buttonCross);
             buttonCross.addEventListener('click',function(e){
-                this.parentElement.style.display='none';
+                var temp=this.parentElement;
+                temp.style.animation='disappear 1s';
+                setInterval(function(){
+                    temp.style.display='none';
+                }, 1000);
             });
             //create checkbox
             var checkBoxLabel=document.createElement('label');
